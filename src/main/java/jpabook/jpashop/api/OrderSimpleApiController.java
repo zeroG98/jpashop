@@ -29,6 +29,7 @@ public class OrderSimpleApiController {
     private final OrderRepository orderRepository;
     private final OrderSimpleQueryRepository orderSimpleQueryRepository;
 
+    //entity 직접 노출
     //ToOne
     @GetMapping("/api/v1/simple-orders")
     public List<Order> ordersV1() {
@@ -40,6 +41,7 @@ public class OrderSimpleApiController {
         return all;
     }
 
+    //entity -> DTO
     //ToOne
     @GetMapping("/api/v2/simple-orders")
     public List<SimpleOrderDto> ordersV2() {
@@ -54,6 +56,7 @@ public class OrderSimpleApiController {
         return result;
     }
 
+    //entity -> DTO fetch join
     //ToOne
     @GetMapping("/api/v3/simple-orders")
     public List<SimpleOrderDto> ordersV3() {
@@ -65,6 +68,7 @@ public class OrderSimpleApiController {
         return result;
     }
 
+    //JPA에서 DTO 바로 조회
     //ToOne
     @GetMapping("/api/v4/simple-orders")
     public List<OrderSimpleQueryDto> ordersV4() {
